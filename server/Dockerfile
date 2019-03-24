@@ -1,6 +1,13 @@
 # Get Node.js latest version from official
 FROM node:latest
 
+# Define environment variable
+ENV NODE_ENV=development
+ENV PORT=8080
+
+# Author name
+LABEL author="Ryota"
+
 # Set the working directory to /app
 WORKDIR /app
 
@@ -11,10 +18,8 @@ COPY . /app
 RUN npm install
 
 # Make port 80 available to the world outside this container
-EXPOSE 8080
-
-# Define environment variable
-#ENV NAME World
+EXPOSE $PORT
 
 # Run app.py when the container launches
 CMD ["npm", "start"]
+
