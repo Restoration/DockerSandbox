@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const mongodb = require('mongodb');
 
-const config = require('./db');
+const config = require('./db/config.json');
 const PORT = 4000;
 const client = mongodb.MongoClient;
 
